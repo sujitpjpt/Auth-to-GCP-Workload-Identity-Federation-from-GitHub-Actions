@@ -1,0 +1,5 @@
+# The web framework itself
+Flask==3.0.3
+
+# The production-grade web server (WSGI) that handles multiple requests efficiently
+gunicorn==22.0.0
