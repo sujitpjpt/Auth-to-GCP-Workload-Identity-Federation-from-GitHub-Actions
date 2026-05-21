@@ -88,8 +88,7 @@ jobs:
           region: '${{ env.REGION }}'
           # NOTE: If using a pre-built image, update the image name below:
           image: '${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO }}/${{env.SERVICE}}'
-          flags: |
-            --allow-unauthenticated
+          flags: '--allow-unauthenticated'
       # If required, use the Cloud Run URL output in later steps
       - name: 'Show output'
         run: |2-
