@@ -39,7 +39,7 @@ env:
   REGION: 'us-central1' # TODO: update to your region
   SERVICE: 'flask-service' # TODO: update to your service name
   REPO: 'test-repo' # TODO: update Artifact Registry repo name
-  WORKLOAD_IDENTITY_PROVIDER: 'projects/796621184970/locations/global/workloadIdentityPools/github-actions/providers/github-provider' # TODO: update to your workload identity provider
+  WORKLOAD_IDENTITY_PROVIDER: 'projects/796621184970/locations/global/workloadIdentityPools/github-actions-2/providers/github-provider-2' # TODO: update to your workload identity provider
   SERVICE_ACCOUNT: 'impersonator-sa' # TODO: update Service Acount name
   
 jobs:
