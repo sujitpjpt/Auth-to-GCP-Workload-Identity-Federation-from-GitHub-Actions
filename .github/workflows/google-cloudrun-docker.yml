@@ -40,7 +40,8 @@ env:
   SERVICE: 'flask-service' # TODO: update to your service name
   REPO: 'test-repo' # TODO: update Artifact Registry repo name
   WORKLOAD_IDENTITY_PROVIDER: 'projects/796621184970/locations/global/workloadIdentityPools/github-actions/providers/github-provider' # TODO: update to your workload identity provider
-
+  SERVICE_ACCOUNT: 'impersonator-sa' # TODO: update Service Acount name
+  
 jobs:
   deploy:
     runs-on: 'ubuntu-latest'
@@ -61,7 +62,8 @@ jobs:
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@f112390a2df9932162083945e46d439060d66ec2' # google-github-actions/auth@v2
         with:
-          project_id: '${{env.PROJECT_ID}}'
+          # project_id: '${{env.PROJECT_ID}}'
+          service_account: '${{env.SERVICE_ACCOUNT}}@${{env.PROJECT_ID}}.iam.gserviceaccount.com'
           workload_identity_provider: '${{ env.WORKLOAD_IDENTITY_PROVIDER }}'
 
       # BEGIN - Docker auth and build
